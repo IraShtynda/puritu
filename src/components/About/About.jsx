@@ -1,14 +1,18 @@
+import top from '../../assets/images/section-top.png'
+import about from '../../assets/images/about.png';
+import plant from '../../assets/images/plant.svg';
+
 export const About = () => {
   return (
     <>
-      <img src='/images/section-top.png' />
+      <img src={top} />
       <section className='max-w-7xl mx-auto flex pt-10 pb-10 gap-12 items-center' id='about'>
-        <img src='/images/about.png' className='w-1/2' />
+        <img src={about} className='w-1/2' />
 
         <div className="w-1/2">
           <h3 className="text-accent-color text-2xl">100% natural</h3>
           <h2 className="text-dark-color text-4xl font-bold mt-2">Great for Your Skin<span className="text-accent-color">.</span></h2>
-          <img src='/images/plant.svg' className="h-8 mt-8" />
+          <img src={plant} className="h-8 mt-8" />
           <p className="text-trand-color text-xl mt-5 mb-8">Our organic soaps gently take care of your skin.</p>
 
           <ul className="list-image-checkmark text-4xl ml-6">

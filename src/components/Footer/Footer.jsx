@@ -3,11 +3,12 @@ import { SocialIcons } from '../SocialIcons'
 import { Navigation } from './Navigation'
 import { Contacts } from './Contacts'
 import { Button} from '../Button'
+import top from '../../assets/images/footer-top.png'
 
 export const Footer = () => {
   return (
     <>
-      <img src='/images/footer-top.png' />
+      <img src={top} />
       <footer className='bg-bg-color'>
         <div className='max-w-7xl mx-auto'>
           <div className='flex pt-10 pb-10 gap-12 items-start border-b border-base-trand-color'>

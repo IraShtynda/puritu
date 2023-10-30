@@ -18,11 +18,11 @@ export default {
     },
     extend: {
       backgroundImage: {
-        'banner': "url('/images/banner.png')",
-        'whyUs': "url('/images/why-us.png')",
+        'banner': "url('./assets/images/banner.png')",
+        'whyUs': "url('./assets/images/why-us.png')",
       },
       listStyleImage: {
-        checkmark: 'url("/images/checkmark.svg")',
+        checkmark: 'url("./assets/images/checkmark.svg")',
       },
     }
   },

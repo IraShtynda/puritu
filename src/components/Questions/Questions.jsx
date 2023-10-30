@@ -1,4 +1,6 @@
 import { AccordeonItem } from "./AccordeonItem"
+import plant from '../../assets/images/plant.svg'
+import questions from '../../assets/images/questions.png'
 
 export const Questions = () => {
 
@@ -8,7 +10,7 @@ export const Questions = () => {
       <div className="w-1/2">
         <h3 className="text-accent-color text-2xl">Questions</h3>
         <h2 className="text-dark-color text-4xl font-bold mt-2">Still Have Questions?<span className="text-accent-color">.</span></h2>
-        <img src='/images/plant.svg' className="h-8 mt-8" />
+        <img src={plant} className="h-8 mt-8" />
         <p className="text-trand-color text-xl mt-5 mb-8">Read the sections below and contact us if you need a consultation or any kind of help.</p>
 
         <div>
@@ -19,7 +21,7 @@ export const Questions = () => {
         </div>
       </div>
 
-      <img src='/images/questions.png' className='w-1/2' />
+      <img src={questions} className='w-1/2' />
     </section>
   )
 }
