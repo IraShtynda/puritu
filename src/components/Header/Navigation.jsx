@@ -1,7 +1,7 @@
 export const Navigation = () => {
   return (
     <nav>
-      <ul className="text-lg font-semibold list-none flex gap-12 items-center">
+      <ul className="text-lg font-semibold list-none flex flex-col lg:flex-row gap-8 lg:gap-12 items-center justify-center">
         <li>
           <a href="#about" className="text-base-trand-color hover:text-dark-color">About Us</a>
         </li>

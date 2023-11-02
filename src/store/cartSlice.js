@@ -1,47 +1,42 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    items: [],
-    totalQuantity: 0,
-    totalSum: 0,
+  items: [],
+  totalQuantity: 0,
+  totalSum: 0,
 }
 
 const cartSlice = createSlice({
-    name: "cart",
-    initialState,
-    reducers: {
-        addItemToCart: (state, action) => {
-            const selectedItem = state.items.find(el => el.id === action.payload.id);
-            if (typeof (selectedItem) === 'undefined') {
-                state.items.push({
-                    id: action.payload.id,
-                    image: action.payload.image,
-                    title: action.payload.title,
-                    price: action.payload.price,
-                    quantity: action.payload.quantity,
-                    totalPrice: action.payload.price * action.payload.quantity, 
-                })
-                state.totalSum += action.payload.price * action.payload.quantity
-            } else {
-                state.totalSum += selectedItem.price * selectedItem.quantity;
-                selectedItem.quantity++;
-                selectedItem.totalPrice = selectedItem.price * selectedItem.quantity;
-            }
-            state.totalQuantity++;
-            
-        },
-        removeItemFromCart: (state, action) => {
-            const selectedItem = state.items.find(el => el.id === action.payload.id);
-            if (typeof (selectedItem) !== 'undefined' && selectedItem.quantity > 1) {
-                selectedItem.quantity--;
-                selectedItem.totalPrice = selectedItem.price * selectedItem.quantity;
-            } else {
-                state.items = state.items.filter(el => el.id !== action.payload.id);
-            }
-            state.totalSum -= selectedItem.price * selectedItem.quantity;
-            state.totalQuantity--;
-        }
+  name: "cart",
+  initialState,
+  reducers: {
+    addItemToCart: (state, action) => {
+      state.items.push({
+        ...action.payload,
+        totalPrice: action.payload.price * action.payload.quantity,
+      })
+      state.totalSum += action.payload.price * action.payload.quantity
+      state.totalQuantity++;
+    },
+    increaseCount: (state, action) => {
+      const selectedItem = state.items.find(el => el.id === action.payload.id);
+      state.totalSum += selectedItem.price * selectedItem.quantity;
+      selectedItem.quantity++;
+      selectedItem.totalPrice = selectedItem.price * selectedItem.quantity;
+      state.totalQuantity++;
+    },
+    decreaseCount: (state, action) => {
+      const selectedItem = state.items.find(el => el.id === action.payload.id);
+      if (selectedItem && selectedItem.quantity > 1) {
+        selectedItem.quantity--;
+        selectedItem.totalPrice = selectedItem.price * selectedItem.quantity;
+      } else {
+        state.items = state.items.filter(el => el.id !== action.payload.id);
+      }
+      state.totalSum -= selectedItem.price * selectedItem.quantity;
+      state.totalQuantity--;
     }
+  }
 });
 
 export const cartActions = cartSlice.actions;

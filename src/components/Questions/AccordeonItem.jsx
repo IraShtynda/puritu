@@ -11,9 +11,10 @@ export const AccordeonItem = (props) => {
       <div className="flex justify-between text-2xl font-bold">
         <h5 className="text-trand-color">{title}</h5>
         <button 
-          className="text-dark-color" 
-          onClick={() => setActive(!active)}>
-            {active ? <FontAwesomeIcon icon={faMinus} /> : <FontAwesomeIcon icon={faPlus} />}
+          onClick={() => setActive(!active)}
+          className="text-base-trand-color hover:text-dark-color"
+        >
+            <FontAwesomeIcon icon={active ? faMinus : faPlus} /> 
         </button>
       </div>
       {active && (<p className="text-base-trand-color pr-5">{content}</p>)}

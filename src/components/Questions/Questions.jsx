@@ -4,10 +4,9 @@ import questions from '../../assets/images/questions.png'
 
 export const Questions = () => {
 
-
   return (
-    <section className='max-w-7xl mx-auto flex pt-10 pb-8 gap-12 items-start'>
-      <div className="w-1/2">
+    <section className='px-10 lg:max-w-7xl mx-auto flex flex-col md:flex-row pt-10 pb-8 gap-12 items-start'>
+      <div className="md:w-1/2">
         <h3 className="text-accent-color text-2xl">Questions</h3>
         <h2 className="text-dark-color text-4xl font-bold mt-2">Still Have Questions?<span className="text-accent-color">.</span></h2>
         <img src={plant} className="h-8 mt-8" />
@@ -21,7 +20,7 @@ export const Questions = () => {
         </div>
       </div>
 
-      <img src={questions} className='w-1/2' />
+      <img src={questions} className='md:w-1/2' />
     </section>
   )
 }

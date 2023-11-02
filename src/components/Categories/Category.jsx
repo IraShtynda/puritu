@@ -1,5 +1,3 @@
-import { Button } from "../Button"
-
 export const Category = ({ category }) => {
 
   return (
@@ -9,7 +7,6 @@ export const Category = ({ category }) => {
       <p className="text-base-trand-color h-20 text-center mb-5">
         {category.description}
       </p>
-      <Button text='Shop' />
     </div>
   )
 }

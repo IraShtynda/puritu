@@ -6,10 +6,10 @@ export const About = () => {
   return (
     <>
       <img src={top} />
-      <section className='max-w-7xl mx-auto flex pt-10 pb-10 gap-12 items-center' id='about'>
-        <img src={about} className='w-1/2' />
+      <section className='px-10 lg:max-w-7xl mx-auto flex flex-col md:flex-row py-10 gap-12 items-center' id='about'>
+        <img src={about} className='md:w-1/2' />
 
-        <div className="w-1/2">
+        <div className="md:w-1/2">
           <h3 className="text-accent-color text-2xl">100% natural</h3>
           <h2 className="text-dark-color text-4xl font-bold mt-2">Great for Your Skin<span className="text-accent-color">.</span></h2>
           <img src={plant} className="h-8 mt-8" />
